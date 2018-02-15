@@ -1,0 +1,23 @@
+#!/bin/sh
+
+path=/sys/class/backlight/nvidia_backlight
+
+luminance() {
+    read -r level < "$path"/brightness
+    printf '%d\n' "$level"
+}
+
+luminance_actual() {
+    read -r level < "$path"/actual_brightness
+    printf '%d\n' "$level"
+}
+
+
+while true; do
+if [ "$(luminance)" != "$(luminance_actual)" ]
+then
+echo "Not matching"
+    echo "$(luminance)" > "$path"/brightness
+fi
+sleep 2
+done

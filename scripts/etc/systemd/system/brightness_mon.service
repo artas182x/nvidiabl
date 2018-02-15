@@ -1,0 +1,8 @@
+[Unit]
+Description=Backlight monitor
+
+[Service]
+ExecStart="/usr/local/bin/backlightmon"
+
+[Install]
+WantedBy=multi-user.target
