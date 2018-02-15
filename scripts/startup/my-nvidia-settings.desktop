@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=My Nvidia Settings
+Exec=nvidia-settings --load-config-only
+Terminal=true
+Type=Application
+X-GNOME-Autostart-enabled=true

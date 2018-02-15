@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Backlight
+Exec=gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
+Terminal=true
+Type=Application
+X-GNOME-Autostart-enabled=true
+Name[en_US]=backlight.desktop

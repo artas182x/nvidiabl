@@ -42,6 +42,7 @@
 	#define USE_PLATFORM_DRIVER
 #endif
 
+
 static unsigned long nvidiabl_ignore_device = 0;
 static long off = NVIDIABL_UNSET;
 static long min = NVIDIABL_UNSET;
@@ -335,6 +336,8 @@ static void __exit nvidiabl_exit(void)
 static int nvidiabl_resume(struct platform_device *pdev)
 {
 	backlight_update_status(nvidiabl_device);
+	backlight_device_set_brightness(nvidiabl_device->props.brightness,10);
+
 	return 0;
 }
 
@@ -345,6 +348,7 @@ static struct platform_driver nvidiabl_driver = {
 	.driver         = {
 		.owner  = THIS_MODULE,
 		.name   = "nvidiabl"
+
 	},
 };
 
